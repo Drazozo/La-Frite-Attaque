@@ -1,0 +1,60 @@
+name: Deploy LaFriteAttaque to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy via SSH with key
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            set -e
+
+            echo "📂 Déplacement dans le dossier du site"
+            cd /home/lafriteattaque/htdocs/lafriteattaque.fr
+
+            echo "🔄 Récupération des dernières modifications"
+            git reset --hard
+            git pull --no-rebase origin main
+
+            echo "🧹 Suppression des anciens fichiers statiques"
+            rm -rf .output/public/_nuxt
+            rm -rf .output/public/builds
+            rm -rf .nuxt
+            rm -rf dist
+            rm -rf node_modules/.cache
+
+            echo "🧹 Suppression des fichiers .json inutiles"
+            find .output/public/ -name "*.json" -delete || true
+
+            echo "📦 Réinstallation des dépendances"
+            npm install
+
+            echo "➕ Installation manuelle de mysql2 (pour API dynamique)"
+            npm install mysql2
+
+            echo "⚙️ Compilation Nuxt (build)"
+            npm run build
+
+            echo "📁 Vérification du contenu de .output/public/"
+            ls -la .output/public/
+
+            echo "🚀 Redémarrage de l'application avec PM2"
+            pm2 delete lafriteattaque || true
+            PORT=3001 pm2 start .output/server/index.mjs --name lafriteattaque --env production
+
+            echo "💾 Sauvegarde de la configuration PM2"
+            pm2 save
