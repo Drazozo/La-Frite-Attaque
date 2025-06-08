@@ -22,24 +22,21 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           script: |
-            set -e
+            echo "📁 Création du dossier si besoin"
+            mkdir -p /var/www
 
-            echo "📂 Déplacement dans le dossier du site"
-            cd /home/lafriteattaque/htdocs/lafriteattaque.fr
-
-            echo "🔄 Récupération des dernières modifications"
-            git reset --hard
-            git pull --no-rebase origin main
-
-            echo "🧹 Suppression des anciens fichiers statiques"
-            rm -rf .output/public/_nuxt
-            rm -rf .output/public/builds
-            rm -rf .nuxt
-            rm -rf dist
-            rm -rf node_modules/.cache
-
-            echo "🧹 Suppression des fichiers .json inutiles"
-            find .output/public/ -name "*.json" -delete || true
+            echo "🔄 Clonage ou mise à jour du dépôt"
+            if [ -d /var/www/lafriteattaque/.git ]; then
+              echo "✅ Dépôt existant, on met à jour"
+              cd /var/www/lafriteattaque
+              git reset --hard
+              git pull origin master
+            else
+              echo "🆕 Dépôt absent, on le clone"
+              rm -rf /var/www/lafriteattaque
+              git clone https://github.com/Drazozo/La-Frite-Attaque.git /var/www/lafriteattaque
+              cd /var/www/lafriteattaque
+            fi
 
             echo "📦 Réinstallation des dépendances"
             npm install
