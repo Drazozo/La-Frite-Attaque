@@ -59,7 +59,7 @@
       href="tel:06 56 66 59 81"
       class="fixed bottom-3 left-1/2 -translate-x-1/2 bg-red text-white px-6 py-3 rounded-full shadow-lg text-sm font-bold z-50"
     >
-      📞 Appeler maintenant
+      📞 Appeler nous maintenant
     </a>
   </div>
 </template>
