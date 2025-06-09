@@ -3,18 +3,19 @@ name: Deploy LaFriteAttaque to Server
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
+    name: "Déploiement via SSH"
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout du repo
         uses: actions/checkout@v3
 
-      - name: Deploy via SSH with key
+      - name: Déploiement via SSH
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -22,47 +23,22 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           script: |
-            echo "📁 Création du dossier si besoin"
-            mkdir -p /var/www
-
-            echo "🔄 Clonage ou mise à jour du dépôt"
-            if [ -d /var/www/lafriteattaque/.git ]; then
-              echo "✅ Dépôt existant, on met à jour"
-              cd /var/www/lafriteattaque
-              git reset --hard
-              git pull origin main
-            else
-              echo "🆕 Dépôt absent, on le clone"
-              rm -rf /var/www/lafriteattaque
-              git clone https://github.com/Drazozo/La-Frite-Attaque.git /var/www/lafriteattaque
-            fi
+            echo "📁 Déploiement de La Frite Attaque"
 
             cd /var/www/lafriteattaque
 
-            echo "📦 Réinstallation des dépendances"
-            npm ci
+            echo "🧹 Suppression des fichiers générés"
+            rm -rf .nuxt .output
 
-            echo "➕ Installation manuelle de mysql2 (pour API dynamique)"
-            npm install mysql2
+            echo "🔄 Synchronisation avec GitHub"
+            git fetch origin
+            git reset --hard origin/master
 
-            echo "⚙️ Compilation Nuxt (build)"
+            echo "📦 Installation des dépendances"
+            npm install
+
+            echo "🏗 Build du projet Nuxt"
             npm run build
 
-            echo "📁 Vérification du contenu de .output/public/"
-            ls -la .output/public/
-
-            echo "🚀 Redémarrage de l'application avec PM2"
-            pm2 delete lafriteattaque || true
-            PORT=3001 pm2 start .output/server/index.mjs --name lafriteattaque --env production
-
-            echo "💾 Sauvegarde de la configuration PM2"
-            pm2 save
-
-            echo "🔍 Vérification que le site est bien en ligne"
-            sleep 5
-            if curl -sSf https://lafriteattaque.fr > /dev/null; then
-              echo '✅ Site accessible en ligne.'
-            else
-              echo '❌ Attention : échec de la vérification de mise en ligne.'
-              exit 1
-            fi
+            echo "🚀 Redémarrage de l'app via PM2"
+            pm2 restart lafriteattaque || pm2 start .output/server/index.mjs --name=lafriteattaque
