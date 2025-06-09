@@ -6,13 +6,13 @@
       </h2>
       <p class="font-poppins text-center leading-5 lg:w-1/2 mx-auto">
         Paroles de gourmets : découvrez ce que nos clients pensent de leur
-        voyage culinaire dans votre food truck “ La Frite Attaque “
+        voyage culinaire dans votre food truck “La Frite Attaque”.
       </p>
     </div>
 
     <div
       ref="containerRef"
-      class="flex flex-nowrap space-x-4 overflow-scroll lg:overflow-hidden w-full pt-20 pb-36 px-5"
+      class="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory w-full pt-20 pb-36 px-5"
     >
       <div
         v-for="(item, index) in testimonials"
@@ -20,11 +20,12 @@
         :ref="(el) => (testimonialRefs[index] = el)"
         :class="[
           item.rotateClass,
-          'transition-transform duration-[1000ms] ease-in-out',
-          'transform border-4 w-[200vw] md:w-[40vw] flex-shrink-0 border-black rounded-lg px-4 py-4 flex items-center space-x-4',
+          'transition-transform duration-[1000ms] ease-in-out snap-center',
+          'transform border-4 border-black rounded-lg px-4 py-4 flex items-center space-x-4 flex-shrink-0',
+          'w-[85vw] sm:w-[80vw] md:w-[40vw]',
         ]"
       >
-        <img class="rounded-full w-20" :src="item.pic" alt="" />
+        <img class="rounded-full w-16 sm:w-20 h-auto" :src="item.pic" alt="" />
         <div>
           <div>
             <Icon
@@ -53,7 +54,7 @@ import three from "~/assets/images/testimonials/03.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const containerRef = ref(null);
-const testimonialRefs = []; // tableau de refs dynamiques (pas ref() ici !)
+const testimonialRefs = [];
 
 const testimonials = [
   {
@@ -78,24 +79,32 @@ const testimonials = [
 
 onMounted(async () => {
   await nextTick();
-  await new Promise((resolve) => setTimeout(resolve, 100)); // petite pause de 50ms
-  testimonialRefs.forEach((el) => {
-    if (!el) return;
-    gsap.fromTo(
-      el,
-      { x: 0 },
-      {
-        x: -400,
-        scrollTrigger: {
-          trigger: el,
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
+  if (window.innerWidth >= 1024) {
+    testimonialRefs.forEach((el) => {
+      if (!el) return;
+      gsap.fromTo(
+        el,
+        { x: 0 },
+        {
+          x: -400,
+          scrollTrigger: {
+            trigger: el,
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+          },
+          duration: 2,
+          ease: "none",
         },
-        duration: 2,
-        ease: "none",
-      },
-    );
-  });
+      );
+    });
+  }
 });
 </script>
+
+<style scoped>
+/* Optionnel : améliore le défilement sur iOS */
+::-webkit-scrollbar {
+  display: none;
+}
+</style>

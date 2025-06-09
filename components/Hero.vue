@@ -15,8 +15,7 @@
         La Frite Attaque
       </h1>
       <p class="text-white text-center text-xl">
-        Sur 4 roues, on parcours le Rhônes Alpes pour délivrer nos meilleurs
-        produits !
+        Sur 4 roues, on parcourt le Rhône-Alpes pour délivrer nos meilleurs produits ! 
       </p>
       <a
         href="/nos-emplacements"
@@ -39,10 +38,11 @@
     </div>
     <div class="bg-black/30 absolute z-30 inset-0 w-full h-full"></div>
     <img
-      class="absolute object-cover h-10 z-40 -bottom-3"
-      src="~/assets/images/svg/beigeFillBottom.svg"
-      alt=""
-    />
+  class="absolute inset-x-0 bottom-0 w-full h-auto z-40"
+  src="~/assets/images/svg/beigeFillBottom.svg"
+  alt=""
+/>
+
   </div>
 </template>
 

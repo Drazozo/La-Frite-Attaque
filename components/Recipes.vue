@@ -9,7 +9,7 @@
       <h1 class="text-2xl md:text-4xl bg- text-white text-outline text-center">
         Ils ont attaqué les frites !🍟 <br />Découvrez nos recettes à succès !
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mt-8 pb-20">
+     d <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mt-8 pb-20">
         <Product
           class=""
           v-for="(product, index) in filteredProducts"

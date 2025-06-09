@@ -1,0 +1,5 @@
+const landing_vue_vue_type_style_index_0_scoped_bab9832c_lang = ".btn-link[data-v-bab9832c]{border-radius:9999px;border-width:1px;display:block;width:100%;--tw-border-opacity:1;border-color:rgb(209 213 219/var(--tw-border-opacity,1));--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1));font-size:.875rem;line-height:1.25rem;padding:.5rem 1rem;text-align:left;transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.btn-link[data-v-bab9832c]:hover{--tw-bg-opacity:1;background-color:rgb(255 186 18/var(--tw-bg-opacity,1));--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.fade-in[data-v-bab9832c]{animation:fadeInUp-bab9832c .8s ease forwards;opacity:0;transform:translateY(20px)}.fade-in.delay-200[data-v-bab9832c]{animation-delay:.2s}.fade-in.delay-400[data-v-bab9832c]{animation-delay:.4s}.fade-in.delay-600[data-v-bab9832c]{animation-delay:.6s}@keyframes fadeInUp-bab9832c{to{opacity:1;transform:translateY(0)}}";
+export {
+  landing_vue_vue_type_style_index_0_scoped_bab9832c_lang as default
+};
+//# sourceMappingURL=landing-styles-1.mjs-DJt6x1GL.js.map

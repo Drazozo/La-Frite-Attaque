@@ -18,7 +18,7 @@
         :data-aos-duration="(index + 1) * 100"
         v-for="(product, index) in products"
         :key="index"
-        class="relative space-y-4 border-t border-l border-5 rounded-xl bg-white pt-32 pb-16 px-5"
+        class="relative space-y-4 border-t border-l border-5 rounded-xl bg-white pt-32 pb-3 px-5"
         :class="`border-${product.blocBorderColor}`"
       >
         <h2 class="capitalize text-center text-xl md:text-2xl">
@@ -32,7 +32,7 @@
           {{ product.description }}
         </p>
         <div class="flex justify-center">
-          <div class="absolute -top-1/4">
+          <div class="absolute -top-20 md:-top-24">
             <a :href="`/la-carte-privatisation/#${product.ancre}`">
               <img
                 :alt="product.title"

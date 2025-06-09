@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="relative overflow-hidden bg-beige py-10">
+  <div ref="containerRef" class="relative overflow-hidden bg-beige py-4 md:py-6">
     <img
       v-if="fill"
       class="absolute z-50 -top-3"
@@ -10,9 +10,10 @@
       <div
         v-for="n in 6"
         :key="n"
-        class="font-permanent text-4xl md:text-8xl whitespace-nowrap px-10 shrink-0"
+       class="font-permanent text-3xl md:text-6xl whitespace-nowrap px-8 shrink-0"
+
       >
-        🍔 food truck 🍟 truck gourmand •
+        🍔 food truck 🍟 truck gourmand 🥔 Frites maison 🎉 Événements, mariages, festivals 🎯 Privatisable partout en Rhône-Alpes
       </div>
     </div>
   </div>

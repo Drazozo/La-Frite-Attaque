@@ -1,0 +1,1 @@
+import{c as e,o as r,t as n}from"./Cp8LerWh.js";const o={class:"px-3 py-2 inline-block transform -rotate-4 rounded-full w-fit font-permanent uppercase font-bold text-white"},c={__name:"Tag",props:{text:{type:String,required:!0}},setup(t){return(a,s)=>(r(),e("span",o,n(t.text),1))}};export{c as _};

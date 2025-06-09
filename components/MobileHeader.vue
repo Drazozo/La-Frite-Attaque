@@ -51,8 +51,9 @@
   </div>
 </template>
 <script setup>
+import { onMounted, watch } from "vue";
 const isActive = ref(false);
-import Link from "./ui/Link.vue";
+
 const menuLinks = ref([
   { text: "accueil", to: "/" },
   { text: "la carte", to: "/la-carte" },
@@ -62,5 +63,12 @@ const menuLinks = ref([
 ]);
 
 const { $socials } = useNuxtApp();
+
+watch(isActive, (value) => {
+  if (process.client) {
+    document.body.style.overflow = value ? "hidden" : "";
+  }
+});
 </script>
+
 <style scoped></style>

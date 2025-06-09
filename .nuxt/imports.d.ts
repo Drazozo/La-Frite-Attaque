@@ -31,4 +31,5 @@ export { setInterval } from '#app/compat/interval';
 export { get, post } from '../utils/api';
 export { filterProducts } from '../utils/filterProducts';
 export { getLocation } from '../utils/getLocation';
+export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
