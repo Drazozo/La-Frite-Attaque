@@ -30,16 +30,17 @@ jobs:
               echo "✅ Dépôt existant, on met à jour"
               cd /var/www/lafriteattaque
               git reset --hard
-              git pull origin master
+              git pull origin main
             else
               echo "🆕 Dépôt absent, on le clone"
               rm -rf /var/www/lafriteattaque
               git clone https://github.com/Drazozo/La-Frite-Attaque.git /var/www/lafriteattaque
-              cd /var/www/lafriteattaque
             fi
 
+            cd /var/www/lafriteattaque
+
             echo "📦 Réinstallation des dépendances"
-            npm install
+            npm ci
 
             echo "➕ Installation manuelle de mysql2 (pour API dynamique)"
             npm install mysql2
@@ -56,3 +57,12 @@ jobs:
 
             echo "💾 Sauvegarde de la configuration PM2"
             pm2 save
+
+            echo "🔍 Vérification que le site est bien en ligne"
+            sleep 5
+            if curl -sSf https://lafriteattaque.fr > /dev/null; then
+              echo '✅ Site accessible en ligne.'
+            else
+              echo '❌ Attention : échec de la vérification de mise en ligne.'
+              exit 1
+            fi
