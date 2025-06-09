@@ -9,6 +9,7 @@
     <Quote />
     <Gallery />
     <Products />
+
     <div class="relative">
       <Link
         to="/nos-emplacements"
@@ -16,9 +17,9 @@
         isolateClass="text-white border-blue"
         class="text-nowrap bg-red w-fit absolute transform left-1/2 -translate-x-1/2 -top-3 z-50 text-xl"
       />
-
       <BrandIntro :presentations="presentations" />
     </div>
+
     <About />
     <WhyChooseUs />
     <Services />
@@ -27,9 +28,18 @@
     <ScrollText />
     <Privatization />
     <PhotoHighlights />
+
+    <!-- ✅ Ajout de la transition SVG entre les sections -->
+    <div class="-mt-1">
+      <svg class="w-full h-12" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#FFF2D4" d="M0,160L1440,320L1440,0L0,0Z"></path>
+      </svg>
+    </div>
+
     <div class="pt-16 bg-beige">
       <Testimonials />
     </div>
+
     <Blog />
     <Faq />
     <Contact />

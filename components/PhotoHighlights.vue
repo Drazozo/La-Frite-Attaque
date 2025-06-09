@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light-black relative pb-52 lg:pb-40">
+  <div class="bg-light-black relative pb-32 lg:pb-24">
     <div class="space-y-5 py-10 px-5 lg:px-28">
       <h2 class="text-white uppercase font-bold text-2xl lg:text-4xl text-center">
         Shoot & Mange : les instants croustillants du truck
@@ -79,7 +79,8 @@
       </div>
     </div>
 
-    <div class="absolute w-full lg:w-2/3 flex lg:left-1/2 transform lg:-translate-x-1/2 z-40 -bottom-20">
+    <!-- Wrapper intégré proprement -->
+    <div class="flex justify-center mt-[-60px] z-40 relative">
       <Wrapper />
     </div>
   </div>
