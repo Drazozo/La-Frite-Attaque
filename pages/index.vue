@@ -69,7 +69,7 @@ const presentations = ref([
   {
     title: "🔥 Vers le 7ème Sel !",
     description:
-      "Notre spécialité ? Des burgers bien garnis, des frites maison croustillantes, des kurtos et des bubble waffles. Le tout préparé avec envie, et servi avec le smile, partout où on pose le camion.",
+      "Notre spécialité ? Des burgers bien garnis, des frites maison croustillantes, des kurtos et nos donuts. Le tout préparé avec envie, et servi avec le smile, partout où on pose le camion.",
     absoluteImage: PopOne,
     absoluteImagePosition: "-top-4 md:top-10",
     image: imageOne,
@@ -98,7 +98,7 @@ useHead({
     {
       name: "description",
       content:
-        "Food truck artisanal basé en Rhône-Alpes, La Frite Attaque vous régale avec ses smash burgers, frites maison, kürtős et bubble waffles. Disponibles pour tous vos événements : privés, pros ou festivals !",
+        "Food truck artisanal basé en Rhône-Alpes, La Frite Attaque vous régale avec ses smash burgers, frites maison, kürtős et Bubble Waffle. Disponibles pour tous vos événements : privés, pros ou festivals !",
     },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
   ],

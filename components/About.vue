@@ -21,7 +21,7 @@
 
           <p class="font-poppins text-sm lg:text-base">
             Avant, c’était RH, gestion et commerce. Aujourd’hui, ce sont les smash burgers,
-            les frites maison, les Kurtos et les bubble waffles.
+            les frites maison, les Kurtos et les donuts.
           </p>
           <p class="font-poppins text-sm lg:text-base">
             Frite Attaque, c’est le projet d’un passionné du terrain, qui a décidé de mêler

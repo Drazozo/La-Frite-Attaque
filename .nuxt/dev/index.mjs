@@ -1763,12 +1763,10 @@ async function getIslandContext(event) {
   return ctx;
 }
 
-const _lazy_N6Yibh = () => Promise.resolve().then(function () { return contenu$1; });
 const _lazy_q3a7aL = () => Promise.resolve().then(function () { return sitemap_xml$1; });
 const _lazy_T7MLAJ = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/contenu', handler: _lazy_N6Yibh, lazy: true, middleware: false, method: undefined },
   { route: '/sitemap.xml', handler: _lazy_q3a7aL, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_T7MLAJ, lazy: true, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: __iORfe, lazy: false, middleware: false, method: undefined },
@@ -2025,50 +2023,6 @@ const styles$1 = /*#__PURE__*/Object.freeze({
   default: styles
 });
 
-const contenu = defineEventHandler(async (event) => {
-  var _a;
-  try {
-    const { ville, categorie } = getQuery$1(event);
-    const mysql = await import('mysql2/promise');
-    const connection = await mysql.createConnection({
-      host: "127.0.0.1",
-      user: "lafriteattaque",
-      password: "lafriteattaque24",
-      database: "lafriteattaque"
-    });
-    const [rowsVille] = await connection.execute("SELECT * FROM local_villes WHERE LOWER(ville) = ?", [ville]);
-    const [rowsCat] = await connection.execute("SELECT * FROM event_categories WHERE LOWER(nom) = ?", [categorie]);
-    if (!rowsVille.length || !rowsCat.length) return { erreur: "Ville ou cat\xE9gorie introuvable" };
-    const villeData = rowsVille[0];
-    const catData = rowsCat[0];
-    const [liens] = await connection.execute(
-      "SELECT * FROM ville_event_link WHERE ville_id = ? AND category_id = ?",
-      [villeData.id, catData.id]
-    );
-    if (!liens.length) return { erreur: "Lien inexistant entre cette ville et cette cat\xE9gorie" };
-    const [textes] = await connection.execute(
-      "SELECT texte_contenu FROM event_textes WHERE category_id = ? ORDER BY RAND() LIMIT 1",
-      [catData.id]
-    );
-    const texteRaw = ((_a = textes[0]) == null ? void 0 : _a.texte_contenu) || "";
-    const texteFinal = texteRaw.replace(/{ville}/g, villeData.ville).replace(/{departement}/g, villeData.departement).replace(/{categorie}/g, catData.nom);
-    return {
-      ville: villeData.ville,
-      departement: villeData.departement,
-      categorie: catData.nom,
-      texte: texteFinal
-    };
-  } catch (error) {
-    console.error("\u274C ERREUR API /contenu.ts :", error);
-    return { erreur: "Erreur serveur", details: error.message };
-  }
-});
-
-const contenu$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  default: contenu
-});
-
 const sitemap_xml = defineEventHandler((event) => {
   setHeader(event, "Content-Type", "application/xml");
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -2113,6 +2067,67 @@ const sitemap_xml = defineEventHandler((event) => {
   <url>
     <loc>https://lafriteattaque.fr/nos-emplacements</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/livret-de-presentation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/legal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Pages produits -->
+  <url>
+    <loc>https://lafriteattaque.fr/produits/le-montagnard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/le-classique</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/le-biquette</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/le-bbq</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/kurtos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/donuts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/crispy-chicken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lafriteattaque.fr/produits/bubble-waffle</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 

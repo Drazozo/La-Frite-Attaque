@@ -25,15 +25,39 @@
       </div>
 
       <!-- Contenu texte -->
-      <div class="md:w-2/3 space-y-4">
+      <NuxtLink
+        v-if="product.slug"
+        :to="`/produits/${product.slug}`"
+        class="md:w-2/3 space-y-4 block text-inherit no-underline hover:opacity-80 transition"
+      >
         <h3 class="text-azure text-xl text-center md:text-left">
           {{ product.title }}
         </h3>
         <p class="text-gray-500 font-poppins text-sm text-center md:text-left">
           {{ product.description }}
         </p>
+        <div class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2">
+          <div
+            v-for="(value, name) in product.labels"
+            :key="name"
+            class="flex flex-col items-center space-y-1.5"
+          >
+            <span class="bg-red font-permanent text-white py-1 px-4 rounded-full">
+              {{ name }}
+            </span>
+            <span class="font-poppins font-bold">{{ value }}</span>
+          </div>
+        </div>
+      </NuxtLink>
 
-        <!-- Labels (prix, calories, portion, etc.) -->
+      <!-- fallback si pas de slug -->
+      <div v-else class="md:w-2/3 space-y-4">
+        <h3 class="text-azure text-xl text-center md:text-left">
+          {{ product.title }}
+        </h3>
+        <p class="text-gray-500 font-poppins text-sm text-center md:text-left">
+          {{ product.description }}
+        </p>
         <div class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2">
           <div
             v-for="(value, name) in product.labels"

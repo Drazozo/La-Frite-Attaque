@@ -50,21 +50,21 @@
             Appréciez nos délicieuses frites maison croustillantes : les patates sont lavées, coupées, blanchies puis frites en direct.
           </p>
           <div class="flex justify-center space-x-4 mt-4">
-            <div class="flex flex-col items-center space-y-1.5">
+          <!----  <div class="flex flex-col items-center space-y-1.5">
               <span class="bg-red font-permanent text-white py-1 px-4 rounded-full">60g</span>
               <span class="font-poppins font-bold">2.00€ </span>
-            </div>
+            </div>-->
             <div class="flex flex-col items-center space-y-1.5">
               <span class="bg-red font-permanent text-white py-1 px-4 rounded-full">100g</span>
-              <span class="font-poppins font-bold">2.50€ </span>
+              <span class="font-poppins font-bold">2€50 </span>
             </div>
             <div class="flex flex-col items-center space-y-1.5">
               <span class="bg-red font-permanent text-white py-1 px-4 rounded-full">250g</span>
-              <span class="font-poppins font-bold">3.50€ </span>
+              <span class="font-poppins font-bold">3€50 </span>
             </div>
                         <div class="flex flex-col items-center space-y-1.5">
-              <span class="bg-red font-permanent text-white py-1 px-4 rounded-full">400g</span>
-              <span class="font-poppins font-bold">5.00€ </span>
+              <span class="bg-red font-permanent text-white py-1 px-4 rounded-full">600g</span>
+              <span class="font-poppins font-bold">6€50 </span>
             </div>
           </div>
         </div>

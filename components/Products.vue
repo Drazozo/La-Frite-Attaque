@@ -47,8 +47,7 @@
     </div>
     <div class="flex justify-center w-1/2 mx-auto mt-10">
       <p class="text-center text-sm font-poppins">
-        *Notre carte évolue en fonction des saisons et de l’envie du chefet de
-        la disponibilité de nos partenaires !
+        * Chez nous, la carte change avec les saisons, l’inspi et les pépites qu’on déniche chez nos producteurs !
       </p>
     </div>
   </div>

@@ -15,102 +15,67 @@ import imageNine from "~/assets/images/gallery/14.jpg";
 
 export const brandData = [
   {
-    title: "1- Faites-nous part de votre projet",
-    description: `Commencez par remplir notre formulaire de demande de
-          devis sur le site. Précisez-nous le nombre de convives, la
-          date de l'événement, le lieu et toute autre information
-          pertinente. Plus vous nous donnez de détails, mieux nous
-          pourrons répondre à vos attentes.`,
+    title: "1 – Faites-nous part de votre événement",
+    description: `Remplissez notre formulaire de demande de devis en ligne : nombre de convives, lieu, date, et vos envies gourmandes. Burgers, frites maison, kurtos ou bubble waffles ? On s’adapte à vous !`,
     absoluteImage: PopOne,
     absoluteImagePosition: "-top-16",
     image: imageOne,
   },
   {
-    title: "2- Un échange personnalisé",
-    description: `Suite à votre demande, notre équipe prendra contact avec
-          vous dans les plus brefs délais. Nous discuterons ensemble
-          des détails de la prestation pour s'assurer que tout soit
-          parfait pour votre événement.`,
+    title: "2 – Un échange personnalisé",
+    description: `Notre équipe vous contacte rapidement pour affiner ensemble votre projet. Objectif : créer une prestation sur-mesure, que ce soit pour un mariage, une soirée d’entreprise ou un anniversaire.`,
     absoluteImage: PopTwo,
     absoluteImagePosition: "-bottom-5 right-20",
     image: imageTwo,
   },
   {
-    title: "3- Réception de votre devis",
-    description: `Après notre échange, nous vous enverrons un devis détaillé.
-  Celui-ci reprendra toutes les prestations convenues (formules à déjeuner, personnel, service, chaises & tables...)`,
+    title: "3 – Un devis clair et complet",
+    description: `Vous recevez un devis détaillé : formules au choix, personnel, service, logistique (tables, chaises…). Tout est listé pour vous permettre de décider en toute transparence.`,
     absoluteImage: GlassesWhite,
     absoluteImagePosition: "-bottom-1 left-5",
     image: imageThree,
   },
   {
-    title: "4- Validation et réservation",
-    description: `Une fois le devis validé de votre part, un acompte sera
-  demandé pour sécuriser la date de votre événement. Ce
-  premier paiement garantit notre présence et notre
-  engagement à faire de votre événement un moment
-  inoubliable. On aura un MAXIII Smile pour un MAXIII festin !`,
+    title: "4 – Réservation officielle",
+    description: `Une fois le devis validé, un acompte permet de bloquer votre date. Vous êtes dans notre planning et on prépare déjà nos frites pour vous !`,
     absoluteImage: PopOne,
     absoluteImagePosition: "-top-16",
     image: imageFour,
   },
   {
-    title: "5- Le Jour J",
-    description: `Le jour J, La Frite Attaque arrive sur le lieu de votre événement.
-  Vous n'avez rien à faire, si ce n'est profiter ! De l'installation à
-  la préparation, en passant par le service, nous nous
-  occupons de tout. Que vous souhaitiez un menu complet de
-  l'entrée au dessert ou simplement nos burgers signature,
-  tout est possible.`,
+    title: "5 – Jour J : place à la gourmandise",
+    description: `Le jour de l'événement, La Frite Attaque s’installe, cuisine et sert dans la bonne humeur. Smash burgers, frites maison,kurtos et (en privatisation uniquement) bubble waffles sont au menu !`,
     absoluteImage: GlassesWhite,
     absoluteImagePosition: "-bottom-1 left-5",
     image: imageFive,
   },
   {
-    title: "6- La Touche Finale",
-    description: `Après avoir régalé vos convives, nous nous chargeons du
-  rangement et de la propreté du lieu. Vous pouvez ainsi
-  profiter pleinement de la suite de votre événement, sans
-  vous soucier des détails logistiques.`,
+    title: "6 – Fin de service, zéro stress",
+    description: `On nettoie, on range, et vous pouvez continuer à profiter de vos invités sans rien avoir à gérer. Notre service est clé en main, de l’arrivée au départ.`,
     absoluteImage: PopTwo,
     absoluteImagePosition: "-bottom-5 right-20",
     image: imageSix,
   },
-
   {
-    title: `La Frite Attaque :
-  L'Alliance du Sérieux et
-  du Savoureux !`,
-    description: `Quand L'Instant s'invite à vos événements professionnels,
-  attendez-vous à une explosion de saveurs ! Lancement de
-  produit, team building ou pot de départ, nos burgers sauront
-  marquer les esprits. Qui a dit que le monde des affaires ne
-  pouvait pas être délicieusement fun ?`,
+    title: `Événements d'entreprise :
+Régalez vos équipes`,
+    description: `Lancement de produit, afterwork, team building ? Offrez une pause gourmande à vos collaborateurs avec notre food truck. Du bon, du fait maison, de la convivialité : l'image de marque passe aussi par l’assiette.`,
     absoluteImage: PopOne,
     absoluteImagePosition: "-top-16",
     image: imageSeven,
   },
-
   {
-    title: `Mariage, Anniversaire :
-  Dites "Oui" à notre gamme !`,
-    description: `La Frite Attaque débarque pour pimenter vos célébrations privées !
-  Imaginez la surprise et le bonheur de vos invités en
-  découvrant notre food-truck à votre fête. Un anniversaire
-  avec des bougies... et des burgers, petits fours, des crêpes... c'est encore mieux, non ?`,
+    title: `Mariage, anniversaire, fête privée :
+une surprise gourmande`,
+    description: `Imaginez la tête de vos invités quand ils découvriront notre food truck à votre fête ! Une animation originale avec des burgers, frites maisons, kurtos et bubble waffles pour ravir petits et grands.`,
     absoluteImage: PopTwo,
     absoluteImagePosition: "-bottom-5 right-20",
     image: imageEight,
   },
-
   {
-    title: `À Votre Goût, Sans Faute
-  de Goût !`,
-    description: `Vous êtes plutôt ketchup ou mayo ? Avec ou sans oignons ?
-  Peu importe ! A chaque instant, on s'adapte à toutes vos envies. On fait sur mesure à vos demandes gourmandes.\n 
-  
-  Parce qu'un événement réussi, c'est avant tout un menu à votre image ! Et nous ne saisons pas que des
-  burgers... nous nous adaptons à vos envies et votre projet !`,
+    title: `Une carte sur-mesure
+pour tous les goûts`,
+    description: `Vegan, spicy, avec ou sans fromage ? On adapte nos recettes à vos envies et vos besoins. Pour les privatisations, nous proposons même des bubble waffles personnalisables en dessert.`,
     absoluteImage: GlassesWhite,
     absoluteImagePosition: "-bottom-1 left-5",
     image: imageNine,

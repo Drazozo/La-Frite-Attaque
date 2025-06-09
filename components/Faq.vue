@@ -85,7 +85,7 @@ const faq = ref([
   {
     question: "Quels types de plats proposez-vous ?",
     answer:
-      "Des burgers smash maison, des frites croustillantes, des kürtős sucrés & salés, et des bubble waffles ultra gourmandes. Tout est préparé minute, avec des produits frais et locaux.",
+      "Des smash burgers maison, des frites croustillantes, des kürtős sucrés et salés, ainsi que des donuts ultra gourmands. Tout est préparé à la minute avec des produits frais, locaux et pleins de goût.",
   },
 ]);
 

@@ -41,7 +41,7 @@
       <div class="flex justify-center items-center">
         <span class="border-t w-full h-0.5 border-gray-500"></span>
         <a
-          href="/la-privatisation"
+          href="/la-carte-privatisation"
           class="bg-white text-xs hover:-rotate-2 text-nowrap text-center w-fit block transition-all transform px-3 py-3 rounded md:text-sm border-t border-l border-4 border-black"
         >
           {{ link.text }}

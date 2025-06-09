@@ -41,15 +41,16 @@
       <h3 class="text-sm font-bold bg-red text-white px-3 py-1 rounded-full inline-block">Notre truck du quotidien</h3>
       <ul class="space-y-2">
         <li><a class="btn-link" href="/nos-emplacements">📅 Où on frit(e) les prochains jours ?</a></li>
-        <li><a class="btn-link" href="/avis">💬 Laissez une note qui nous chauffe !</a></li>
+        <li><a class="btn-link" href="https://g.page/r/CbxlWDQ5XLs1EAE/review">💬 Laissez une note qui nous chauffe !</a></li>
         <li><a class="btn-link" href="/la-carte">🍔 On mange quoi de bon ?</a></li>
-        <li><a class="btn-link" href="/kurtos">🍩 Papoter autour d’un kürtős ?</a></li>
+        <li><a class="btn-link" href="/contact">🍩 Papoter autour d’un kürtős ?</a></li>
       </ul>
 
       <h3 class="text-sm font-bold bg-orange text-white px-3 py-1 rounded-full inline-block mt-6">Privatisation & Événements</h3>
       <ul class="space-y-2">
         <li><a class="btn-link" href="/la-privatisation">🎉 Découvrir la privatisation</a></li>
-        <li><a class="btn-link" href="/la-carte#privatisation">📜 La carte traiteur</a></li>
+        <li><a class="btn-link" href="la-carte-privatisation">📜 La carte traiteur</a></li>
+        <li><a class="btn-link" href="livret-de-presentation">📄 Notre Livret de Présentation</a></li>
         <li><a class="btn-link" href="/contact">✉️ Faire une demande de devis</a></li>
       </ul>
     </div>
